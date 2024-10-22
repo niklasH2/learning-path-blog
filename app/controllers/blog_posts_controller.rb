@@ -44,7 +44,7 @@ class BlogPostsController < ApplicationController
         if user_signed_in?
             @blog_post = BlogPost.find(params[:id])
         else
-            @blog_post = BlogPost.published.find(params[id])
+            @blog_post = BlogPost.published.find(params[:id])
         end
     rescue ActiveRecord::RecordNotFound
         redirect_to root_path
